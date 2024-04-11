@@ -106,8 +106,8 @@ for x in range(start = 1, stop = length(holderTags), step = 1)
     for c in range(start = 1, stop = length(holderAthletes), step = 1) # loop through athletes and tag events 
         if foo[1] == holderAthletes[c].ID
             for b in range(start = 1, stop = length(holderEvents), step = 1)
-                if foo[2] == holderEvents[b].ID
-                holderAthletes[c].EventList = holderAthletes[c].EventList * holderEvents[b].name * ","
+                if foo[2] == holderEvents[b].ID 
+                holderAthletes[c].EventList = holderAthletes[c].EventList * holderEvents[b].name * ",  "
                 end
             end
         end
@@ -115,9 +115,8 @@ for x in range(start = 1, stop = length(holderTags), step = 1)
     for c in range(start = 1, stop = length(holderEvents), step = 1) # loop through events and tag athletes. 
         if foo[2] == holderEvents[c].ID
             for b in range(start = 1, stop = length(holderAthletes), step = 1)
-                if foo[1] == holderAthletes[b].ID
-                    holderEvents[c].AthleteList = holderEvents[c].AthleteList * holderAthletes[b].name * ","
-            
+                if foo[1] == holderAthletes[b].ID && b != length(holderAthletes)
+                    holderEvents[c].AthleteList = holderEvents[c].AthleteList * holderAthletes[b].name * ",  "
                 end
             end
         end
@@ -125,12 +124,44 @@ for x in range(start = 1, stop = length(holderTags), step = 1)
 end
 
 for x in range(start = 1,stop = length(holderAthletes),step = 1) # print the arrays 
-    y = holderAthletes[x]
-    print("Athletes #$x $y\n")
+   # y = holderAthletes[x].EventList
+    local name = holderAthletes[x].name
+    local ID = holderAthletes[x].ID
+
+    print("The Athletes name is $name\n")
+    print("The Athletes ID is $ID\n")
+    y = split(holderAthletes[x].EventList, ",  ")
+    if holderAthletes[x].EventList == ""
+        print("This Athlete is not present at any events\n\n\n\n")
+        break
+    end
+    for item in y 
+        if item == ""
+            break
+        end
+        print("Events Name = $item\n")
+    end
+    print("\n\n\n")
 end
 for x in range(start = 1,stop = length(holderEvents),step = 1) # print the arrays
-    y = holderEvents[x]
-    print("Events #$x $y\n")
+    local name = holderEvents[x].name
+    local ID = holderEvents[x].ID
+
+    print("The Events name is $name\n")
+    print("The Events ID is $ID\n")
+    y = split(holderEvents[x].AthleteList, ",  ")
+    if holderEvents[x].AthleteList == ""
+        print("No athletes present at event\n\n\n\n")
+        break
+    end
+    for item in y 
+        if item == ""
+            break
+        end
+        print("Athletes Present Name = $item\n")
+        
+    end
+    print("\n\n\n")
 end
 
 #=
