@@ -1,0 +1,24 @@
+I-456 Joseph P. Allen, Jr.
+I-11535 Madonna
+J-09465 Prince Henry Charles Albert David, Duke of Sussex
+K-3957 Stephanie McGraw
+000369 Bozo The Clown
+I-000000 An unregistered athlete
+
+E-12 Triathlon
+E-797 High Jump
+E-005 An event no one participates in
+EV-7 4-person-relay
+E-1 100 yard dash
+
+I-456 E-12
+K-3957 E-797
+J-09465 E-1
+000369 EV-7
+000369 E-12
+I-11535 EV-7
+I-456 E-797
+K-3957 EV-7
+I-456 EV-7
+I-11535 E-1
+I-11535 E-12
