@@ -136,6 +136,7 @@ for x in range(start = 1,stop = length(holderAthletes),step = 1) # print the arr
         break
     end
     for item in y 
+# loop over substrings and print out each individually end condition either "" or no substrings left
         if item == ""
             break
         end
@@ -155,6 +156,7 @@ for x in range(start = 1,stop = length(holderEvents),step = 1) # print the array
         break
     end
     for item in y 
+# loop over substrings and print out each individually end condition either "" or no substrings left 
         if item == ""
             break
         end
